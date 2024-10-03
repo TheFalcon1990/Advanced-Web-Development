@@ -25,4 +25,10 @@ if ($action === "/") {
 } else if ($action === "store") {
     //Call store() in filmController
     store();
+}else if ($action === "about") {
+    //Call store() in filmController
+    about();
+}else if ($action === "edit") {
+    //Call edit() in filmController
+    edit();
 }

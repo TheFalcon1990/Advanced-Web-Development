@@ -46,20 +46,47 @@ function store()
 
 function about()
 {
-    //add code in here
+    //add code in here (done it)
+    require('views/about.view.php');
 }
 
 function edit()
 {
-    //add code in here
+    //add code in here(done)
+
+    $id = $_GET['id'];
+    $film = find($id);
+    require('./views/edit.view.php');
 }
 
 function updateFilm()
 {
-    //add code in here
+    //add code in here (done)
+
+    require('./models/film.php');
+
+    $id = $_POST['id'];
+    $title = $_POST['title'];
+    $year= $_POST['year'];
+    $duration = $_POST['duration'];
+
+    update($id, $title, $year, $duration);
+
+    header('Location: index.php');
+    die();
 }
 
 function destroy()
 {
-    //add code in here
+    //add code in here (done)
+
+    require('./models/film.php');
+
+    $id = $_POST['id'];
+
+    delete($id);
+
+    //Add some code in here to get this to work
+    header('Location: index.php');
+    die();
 }
