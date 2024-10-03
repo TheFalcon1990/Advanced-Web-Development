@@ -1,24 +1,10 @@
 <!DOCTYPE HTML>
 <html>
-
-<head>
-    <title>List the films</title>
-    <meta http-equiv="content-type" content="text/html;charset=utf-8">
-    <link href="css/style.css" type="text/css" rel="stylesheet">
-</head>
-
-<body>
-    <nav>
-        <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="create.php">Add new film</a></li>
-            <li><a href="about.php">About</a></li>
-        </ul>
-    </nav>
-
+<?php
+require('views/header.html');
+require('views/nav.html');
+?>
     <h1>About</h1>
-    <p>This is a simple app to demonstrate basic CRUD functionality in PHP using PDO.</p>
+    <p>This is a simple app to demonstrate basic CRUD functionality in PHP using PDO testing.</p>
 
-</body>
-
-</html>
+<?php    require('views/footer.html'); ?>
