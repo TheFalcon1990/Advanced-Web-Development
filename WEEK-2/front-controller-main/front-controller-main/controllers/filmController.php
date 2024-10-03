@@ -86,7 +86,6 @@ function destroy()
 
     delete($id);
 
-    //Add some code in here to get this to work
     header('Location: index.php');
     die();
 }
