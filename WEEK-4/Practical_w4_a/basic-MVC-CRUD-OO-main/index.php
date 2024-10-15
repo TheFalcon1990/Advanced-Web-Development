@@ -30,4 +30,13 @@ if ($action === "/") {
 } else if ($action === "store") {
     //Call store() in filmController
     $filmController->store();
+}else if ($action === "edit") {
+    //Call edit() in filmController
+    $filmController->edit();
+}else if ($action === "update") {
+    //Call edit() in filmController
+    $filmController->update();
+}else if ($action === "delete") {
+    //Call edit() in filmController
+    $filmController->destroy();
 }
