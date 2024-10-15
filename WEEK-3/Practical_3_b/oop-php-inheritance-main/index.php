@@ -134,7 +134,7 @@ Think what properties and methods Joiner and Builder have in common. All the pre
 Test this works by calling the buildHouse and payContractors methods
 */
 
-	$projectManager = new ProjectManager($builder, $joiner,$electrician);
+	$projectManager = new ProjectManager();
 	$projectManager->buildHouse();
 	$projectManager->payContractors();
 	
