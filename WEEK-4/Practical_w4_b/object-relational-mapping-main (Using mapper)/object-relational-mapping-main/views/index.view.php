@@ -2,7 +2,7 @@
 $pageTitle = "Amazing film app";
 require("./views/partials/header.php");
 
-echo "<h1>Here's a list of films (Using Active Record) </h1>";
+echo "<h1>Here's a list of films (Using mapper)</h1>";
 
 // The results from the database are returned as an array
 // Use a foreach loop to iterate over the array and display the each film

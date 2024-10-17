@@ -33,10 +33,11 @@ if ($action === "/") {
 } else if ($action === "edit") {
     //Call edit() in filmController
     $filmController->edit();
-}else if ($action === "update") {
+} else if ($action === "update") {
     //Call update() in filmController
     $filmController->update();
-}else if ($action === "delete") {
-    //Call destroy() in filmController
+} else if ($action === "delete") {
+    //Call update() in filmController
     $filmController->destroy();
 }
+

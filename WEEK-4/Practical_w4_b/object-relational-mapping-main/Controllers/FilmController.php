@@ -44,13 +44,37 @@ class FilmController extends BaseController
 	function edit()
 	{
 		// Add your code in here
+		$id = $_GET['id'];
+
+		$film = Film::find($id);
+		
+		$this->loadView("edit.view",["film"=>$film]);
 	}
 	function update()
 	{
 		//Add your code in here
+		$id = $_POST['id'];
+		$film = Film::find($id);
+		$film->title = $_POST['title'];
+		$film->year = $_POST['year'];
+		$film->duration = $_POST['duration'];
+		$film->save();
+
+		header('Location: ./index.php');
+
 	}
 	function destroy()
 	{
 		//Add your code in here
+		$id = $_POST['id'];
+
+		$film = Film::find($id);
+
+		$film->delete();
+
+		header('Location: ./index.php');
+
+
+
 	}
 }
