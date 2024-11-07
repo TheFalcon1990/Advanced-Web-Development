@@ -1,0 +1,409 @@
+nav {
+  background-color: #ffb218; /* Set a background color for the navbar */
+  padding: 10px 0; /* Add some padding to the top and bottom */
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* Flexbox for horizontal layout */
+  justify-content: center; /* Center the items horizontally */
+}
+
+nav li {
+  margin-right: 20px; /* Space between items */
+}
+
+nav a {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-decoration: none;
+  outline: 0;
+  transition: all .3s ease; /* Shortened transition for hover effect */
+  line-height: 20px;
+  padding: 8px 10px; /* Padding for the links */
+  color: #000000; /* Default link color */
+  font-weight: 800;
+  text-transform: capitalize;
+  position: relative;
+  font-size: 13px;
+}
+
+nav a:hover {
+  color: #10c200; /* Change text color on hover */
+  background-color: rgb(0, 0, 0); /* Light red background on hover */
+  border-radius: 4px; /* Rounded corners for the box */
+  padding: 8px 10px; /* Keep the padding the same */
+}
+
+/* create.blade style*/
+
+.racket-form {
+  max-width: 400px; /* Limit the width of the form */
+  margin: 0 auto; /* Center the form */
+  padding: 20px; /* Add padding inside the form */
+  border: 1px solid #ccc; /* Add a border */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #f9f9f9; /* Light background color */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.form-group {
+  margin-bottom: 15px; /* Space between form groups */
+}
+
+.form-control {
+  width: 100%; /* Full width for inputs */
+  padding: 10px; /* Padding inside inputs */
+  border: 1px solid #ccc; /* Border for inputs */
+  border-radius: 4px; /* Rounded corners for inputs */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.radio-group {
+  display: flex; /* Flexbox for radio buttons */
+  gap: 15px; /* Space between radio options */
+}
+
+.btn-submit {
+  background-color: #f5b400; /* Button background color */
+  color: #fff; /* Button text color */
+  border: none; /* Remove border */
+  padding: 10px 15px; /* Padding for button */
+  border-radius: 4px; /* Rounded corners for button */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.btn-submit:hover {
+  background-color: #e6a800; /* Darker shade on hover */
+}
+
+/* create.blade style*/
+
+.racket-list {
+  max-width: 800px; /* Limit the width of the list */
+  margin: 0 auto; /* Center the list */
+  padding: 20px; /* Add padding */
+  background-color: #f9f9f9; /* Light background color */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.racket-item {
+  border: 1px solid #ccc; /* Border around each item */
+  border-radius: 4px; /* Rounded corners for items */
+  padding: 15px; /* Padding inside each item */
+  margin-bottom: 15px; /* Space between items */
+  background-color: #fff; /* White background for items */
+  transition: box-shadow 0.3s; /* Transition for hover effect */
+}
+
+.racket-item:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+.racket-item h2 {
+  margin: 0; /* Remove default margin */
+  font-size: 18px; /* Font size for titles */
+}
+
+.racket-item p {
+  margin: 5px 0; /* Space between paragraphs */
+  font-size: 14px; /* Font size for details */
+}
+
+
+/* index .blade style */
+
+.racket-list {
+  max-width: 800px; /* Limit the width of the list */
+  margin: 0 auto; /* Center the list */
+  padding: 20px; /* Add padding */
+  background-color: #f9f9f9; /* Light background color */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.racket-item {
+  border: 1px solid #ccc; /* Border around each item */
+  border-radius: 4px; /* Rounded corners for items */
+  padding: 15px; /* Padding inside each item */
+  margin-bottom: 15px; /* Space between items */
+  background-color: #fff; /* White background for items */
+  transition: box-shadow 0.3s; /* Transition for hover effect */
+}
+
+.racket-item:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+.racket-item h2 {
+  margin: 0; /* Remove default margin */
+  font-size: 18px; /* Font size for titles */
+}
+
+.racket-item p {
+  margin: 5px 0; /* Space between paragraphs */
+  font-size: 14px; /* Font size for details */
+}
+
+/* Search Form Styles */
+.search-form {
+  margin-bottom: 20px; /* Space below the search form */
+  display: flex; /* Flexbox layout */
+  justify-content: center; /* Center the form */
+}
+
+.search-input {
+  padding: 10px; /* Padding inside the input */
+  border: 1px solid #ccc; /* Border for input */
+  border-radius: 4px; /* Rounded corners */
+  width: 300px; /* Width of the input */
+  margin-right: 10px; /* Space between input and button */
+}
+
+.search-button {
+  padding: 10px 15px; /* Padding for button */
+  background-color: #f5b400; /* Button background color */
+  color: #fff; /* Button text color */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Rounded corners for button */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.search-button:hover {
+  background-color: #e6a800; /* Darker shade on hover */
+}
+
+/* Pagination Styles */
+.pagination {
+  margin-top: 20px; /* Space above pagination */
+  text-align: center; /* Center the pagination links */
+}
+
+.pagination a {
+  margin: 0 5px; /* Space between pagination links */
+  padding: 8px 12px; /* Padding for pagination links */
+  border: 1px solid #ccc; /* Border for pagination links */
+  border-radius: 4px; /* Rounded corners */
+  text-decoration: none; /* Remove underline from links */
+  color: #333; /* Text color */
+}
+
+.pagination a.active {
+  background-color: #007bff; /* Active link color */
+  color: white; /* Active link text color */
+}
+
+.pagination a.disabled {
+  color: #ccc; /* Disabled link color */
+  pointer-events: none; /* Disable click events */
+}
+
+/* welcome style  */
+
+.welcome-message {
+  position: fixed; /* Fixes the message to the viewport */
+  top: 0; /* Aligns to the top */
+  left: 0; /* Aligns to the left */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(0, 0, 0, 0.8); /* Dark background with opacity */
+  color: white; /* White text for contrast */
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  z-index: 9999; /* Ensure it appears above other content */
+  opacity: 0; /* Start hidden */
+  transition: opacity 1s ease-in-out; /* Smooth fade-in and fade-out */
+}
+
+.welcome-message.show {
+  opacity: 1; /* Show the message */
+}
+
+.welcome-message h1 {
+  font-size: 3em; /* Larger font size for the heading */
+  text-align: center; /* Center text alignment */
+  margin: 0; /* Remove default margin */
+}
+
+/* show.blade .php style  */
+
+.racket-details {
+  max-width: 600px; /* Set a maximum width */
+  width: 100%; /* Allow it to take full width up to the max */
+  margin: 20px auto; /* Center it with auto margins */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  text-align: center; /* Center text */
+  padding: 20px; /* Add some padding */
+  background-color: #f9f9f9; /* Light background color */
+  border: 1px solid #ff0000; /* Light border */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.racket-details h1 {
+  font-size: 2.5em; /* Increase the size of the title */
+  margin-bottom: 10px; /* Space below the title */
+}
+
+.racket-details h2 {
+  font-size: 1.5em; /* Size of the company name */
+  color: #555; /* Slightly darker color for the company */
+  margin-bottom: 20px; /* Space below the company name */
+}
+
+.racket-details p {
+  font-size: 1.2em; /* Size of the paragraph text */
+  margin: 5px 0; /* Space above and below paragraphs */
+}
+
+.racket-details button {
+  padding: 10px 20px; /* Padding for buttons */
+  font-size: 1em; /* Font size for buttons */
+  margin: 5px; /* Space between buttons */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners for buttons */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.racket-details button:hover {
+  background-color: #007BFF; /* Change background on hover */
+  color: white; /* Change text color on hover */
+}
+
+
+/* show .blade .php style  */
+
+.edit-racket {
+  max-width: 600px; /* Set a maximum width */
+  width: 100%; /* Allow it to take full width up to the max */
+  margin: 20px auto; /* Center it with auto margins */
+}
+
+.edit-racket {
+  max-width: 600px; /* Set a maximum width */
+  width: 100%; /* Allow it to take full width up to the max */
+  margin: 20px auto; /* Center it with auto margins */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #fd0000;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.edit-racket h1 {
+  font-size: 2.5em; /* Increase the size of the title */
+  margin-bottom: 20px; /* Space below the title */
+}
+
+.edit-racket div {
+  margin-bottom: 15px; /* Space between form fields */
+  width: 100%; /* Full width for form fields */
+}
+
+.edit-racket label {
+  display: block; /* Block display for labels */
+  margin-bottom: 5px; /* Space below labels */
+}
+
+.edit-racket input[type="text"] {
+  width: 100%; /* Full width for text inputs */
+  padding: 10px; /* Padding for text inputs */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 5px; /* Rounded corners */
+}
+
+
+.edit-racket input[type="radio"] {
+  margin-right: 5px; /* Space between radio button and label */
+}
+
+.edit-racket button {
+  padding: 10px 20px; /* Padding for buttons */
+  font-size: 1em; /* Font size for buttons */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners for buttons */
+  cursor: pointer; /* Pointer cursor on hover */
+  background-color: #007BFF; /* Primary button color */
+  color: white; /* Text color for buttons */
+  transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.edit-racket button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+/* h1 welcome */
+ 
+/* === BASE HEADING === */ 
+
+h1 {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  font-size: 40px;
+  color: #080808;
+  -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+h1 span {
+  display: block;
+  font-size: 0.5em;
+  line-height: 1.3;
+}
+h1 em {
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* Style for h1----------------------------- */
+.seven h1 {
+text-align: center;
+    font-size:30px; font-weight:300; color:#222; letter-spacing:1px;
+    text-transform: uppercase;
+
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    grid-template-rows: 50px 0;
+    grid-gap: 20px;
+    align-items: center;
+}
+
+.seven h1:after,.seven h1:before {
+    content: " ";
+    display: block;
+    border-bottom: 1px solid #ffab02;
+    border-top: 1px solid #ffab02;
+    height: 5px;
+  background-color:#f8f8f8;
+}
+
+.seven {
+  position: relative;
+  background: #f8f8f8;
+  width: 90%;
+  max-width: auto;
+  padding: 2em;
+  margin: 1.5em auto;
+  border: 3px solid rgba(0, 0, 0, 0.08);
+}
+
