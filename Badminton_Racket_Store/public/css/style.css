@@ -1,8 +1,10 @@
+body{
+  margin: 0;
+}
 nav {
-  background-color: #ffb218; /* Set a background color for the navbar */
+  background-color: #fac000; /* Set a background color for the navbar */
   padding: 10px 0; /* Add some padding to the top and bottom */
 }
-
 nav ul {
   list-style: none;
   padding: 0;
@@ -66,6 +68,12 @@ nav a:hover {
 .radio-group {
   display: flex; /* Flexbox for radio buttons */
   gap: 15px; /* Space between radio options */
+}
+
+
+.submit {
+  display: flex; /* Enable flexbox */
+  justify-content: center; /* Center the button horizontally */
 }
 
 .btn-submit {
@@ -151,35 +159,41 @@ nav a:hover {
   font-size: 14px; /* Font size for details */
 }
 
-/* Search Form Styles */
+/* search form style*/
+
 .search-form {
-  margin-bottom: 20px; /* Space below the search form */
-  display: flex; /* Flexbox layout */
-  justify-content: center; /* Center the form */
+  display: flex;
+  justify-content: center; /* Center the search form */
+  margin: 20px 0; /* Add some margin */
 }
 
 .search-input {
-  padding: 10px; /* Padding inside the input */
-  border: 1px solid #ccc; /* Border for input */
-  border-radius: 4px; /* Rounded corners */
-  width: 300px; /* Width of the input */
-  margin-right: 10px; /* Space between input and button */
+  padding: 10px; /* Add padding for better usability */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 5px; /* Rounded corners */
+  width: 300px; /* Set a width */
+  transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+.search-input:focus {
+  border-color: #007bff; /* Change border color on focus */
+  outline: none; /* Remove default outline */
 }
 
 .search-button {
-  padding: 10px 15px; /* Padding for button */
-  background-color: #f5b400; /* Button background color */
-  color: #fff; /* Button text color */
+  padding: 10px 15px; /* Add padding */
+  background-color: #007bff; /* Button color */
+  color: white; /* Text color */
   border: none; /* Remove border */
-  border-radius: 4px; /* Rounded corners for button */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s; /* Transition for hover effect */
+  border-radius: 10px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor */
+  transition: background-color 0.3s; /* Smooth transition */
+  margin-left: 10px; /* Add margin to create a gap */
 }
 
 .search-button:hover {
-  background-color: #e6a800; /* Darker shade on hover */
+  background-color: #0056b3; /* Darker blue on hover */
 }
-
 /* Pagination Styles */
 .pagination {
   margin-top: 20px; /* Space above pagination */
@@ -196,7 +210,7 @@ nav a:hover {
 }
 
 .pagination a.active {
-  background-color: #007bff; /* Active link color */
+  background-color: #000000; /* Active link color */
   color: white; /* Active link text color */
 }
 
@@ -205,32 +219,12 @@ nav a:hover {
   pointer-events: none; /* Disable click events */
 }
 
-/* welcome style  */
 
-.welcome-message {
-  position: fixed; /* Fixes the message to the viewport */
-  top: 0; /* Aligns to the top */
-  left: 0; /* Aligns to the left */
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  background-color: rgba(0, 0, 0, 0.8); /* Dark background with opacity */
-  color: white; /* White text for contrast */
-  display: flex; /* Use flexbox for centering */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  z-index: 9999; /* Ensure it appears above other content */
-  opacity: 0; /* Start hidden */
-  transition: opacity 1s ease-in-out; /* Smooth fade-in and fade-out */
-}
-
-.welcome-message.show {
-  opacity: 1; /* Show the message */
-}
-
-.welcome-message h1 {
-  font-size: 3em; /* Larger font size for the heading */
-  text-align: center; /* Center text alignment */
-  margin: 0; /* Remove default margin */
+.pagination-info {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 1.2em; /* Increase font size */
+  color: #000000; /* Change text color */  
 }
 
 /* show.blade .php style  */
@@ -258,7 +252,7 @@ nav a:hover {
 
 .racket-details h2 {
   font-size: 1.5em; /* Size of the company name */
-  color: #555; /* Slightly darker color for the company */
+  color: #ff0000; /* Slightly darker color for the company */
   margin-bottom: 20px; /* Space below the company name */
 }
 
@@ -276,6 +270,14 @@ nav a:hover {
   cursor: pointer; /* Pointer cursor on hover */
   transition: background-color 0.3s; /* Smooth background color transition */
 }
+
+.racket-details button a{
+  transition: background-color 0.3s; /* Smooth background color transition */
+  text-decoration: none;
+  color: black;
+
+}
+
 
 .racket-details button:hover {
   background-color: #007BFF; /* Change background on hover */
@@ -405,5 +407,37 @@ text-align: center;
   padding: 2em;
   margin: 1.5em auto;
   border: 3px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Error message */
+
+.alert {
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 5px;
+  font-size: 16px;
+  border: 1px solid transparent;
+  text-align: center; /* Center the text */
+}
+
+.alert-success {
+  background-color: #d4edda; /* Light green background */
+  color: #155724; /* Dark green text */
+  border-color: #c3e6cb; /* Border color */
+}
+
+.alert-danger {
+  background-color: #f8d7da; /* Light red background */
+  color: #721c24; /* Dark red text */
+  border-color: #f5c6cb; /* Border color */
+}
+
+.alert p {
+  margin: 0; /* Remove default margin from paragraphs */
+}
+
+.alert-success:hover, .alert-danger:hover {
+  opacity: 0.9; /* Slightly transparent on hover */
+  transition: opacity 0.3s ease; /* Smooth transition */
 }
 

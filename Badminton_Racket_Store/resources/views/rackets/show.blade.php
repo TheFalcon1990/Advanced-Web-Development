@@ -6,15 +6,18 @@
         <p><strong>Level:</strong> {{$racket->level}}</p>
 
         <div class="button-group">
-            <a href='/rackets/{{$racket->id}}/edit'>
-                <button>Edit</button>
-            </a>
+                <button><a href='/rackets/{{$racket->id}}/edit'>Edit</a></button>
 
             <form method='POST' action='/rackets' style="display:inline;">
+
                 @csrf
+
                 @method('DELETE')
+
                 <input type="hidden" name="id" value="{{$racket->id}}">
+
                 <button type='submit'>Delete</button>
+                
             </form>
         </div>
     </div>

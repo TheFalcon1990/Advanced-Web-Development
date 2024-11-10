@@ -3,13 +3,29 @@
         <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     </head>
 
-    <div id="welcome-message" class="welcome-message" style="display: none;">
-        <h1>Welcome to the Badminton Store</h1>
-    </div>
-
     <div class="seven">
         <h1>Badminton Store</h1>
     </div>
+
+    <!--Message displaying -->
+
+    @if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+    @endif
+
+    
+
+    @if (session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+    @endif
+
+    @if ( $rackets->total() == 0 )
+        <p>No Rackets Found</p>
+    @endif
 
     <!-- Search Bar -->
     <form method="GET" action="{{ url('/rackets') }}" class="search-form">
@@ -32,31 +48,18 @@
         @endforeach
     </div>
 
-    <!-- Pagination -->
-    <div class="pagination">
-        <p>Page {{ $rackets->currentPage() }} of {{ $rackets->lastPage() }}</p>
-        {{ $rackets->links('vendor.pagination.bootstrap-4') }} <!-- Using Laravel Bootstrap pagination -->
+    <!-- Display Search Results Count and Pagination -->
+    <div class="pagination-info">
+        @if(request('search'))
+            <p>There are {{ $rackets->total() }} results for "{{ request('search') }}". Page {{ $rackets->currentPage() }} of {{ $rackets->lastPage() }}</p>
+        @else
+            <p>There are {{ $totalRackets }} rackets available. Page {{ $rackets->currentPage() }} of {{ $rackets->lastPage() }}</p>
+        @endif
     </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var welcomeMessage = document.getElementById("welcome-message");
+    <!-- Pagination Links -->
+        <div class="pagination">
+            {{ $rackets->appends(request()->query())->links('vendor.pagination.bootstrap-4') }} <!-- Using Laravel Bootstrap pagination -->
+        </div>
 
-            // Check if the welcome message has already been shown
-            if (!localStorage.getItem("welcomeMessageShown")) {
-                // Show the message
-                welcomeMessage.style.display = "block";
-                welcomeMessage.classList.add("show");
-
-                // Hide the message after 5 seconds
-                setTimeout(function() {
-                    welcomeMessage.classList.remove("show");
-                    welcomeMessage.style.display = "none"; // Hide the message
-                }, 5000); // 5000 milliseconds = 5 seconds
-
-                // Set the flag in localStorage
-                localStorage.setItem("welcomeMessageShown", "true");
-            }
-        });
-    </script>
 </x-layout>
