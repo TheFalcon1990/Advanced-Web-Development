@@ -20,8 +20,9 @@
             <h3>Xtream Flex</h3>
             <p>Brand: Victor | Year: 1989 | Level: Professional</p>
         </div>
-
-
+        
+        {{-- using separate style for the gallery --}}
+        
         <style>
             /* About Section Styles */
             .about-section {
