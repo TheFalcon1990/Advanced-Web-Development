@@ -27,11 +27,15 @@
         <p>No Rackets Found</p>
     @endif
 
+    
     <!-- Search Bar -->
     <form method="GET" action="{{ url('/rackets') }}" class="search-form">
+        
         <input type="text" name="search" value="{{ request('search') }}" placeholder="Search for a racket..." class="search-input" />
         <button type="submit" class="search-button">Search</button>
     </form>
+
+    <p class="available-rackets-title">The List Of Available Rackets</p>
 
     <div class="racket-list">
         @foreach ($rackets as $racket)
