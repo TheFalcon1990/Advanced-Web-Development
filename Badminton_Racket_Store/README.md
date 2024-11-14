@@ -11,7 +11,9 @@ First, let's set up the `racket_store` database where we will keep information a
 ### Preparing the `rackets` Table
 1. Open phpMyAdmin and select the `racket_store` database.
 2. Deleted any existing table named `rackets` (Laravel will recreate it for us later). 
+
    - In phpMyAdmin, I created the table called rackets.
+
    ![alt text](image.png)
 
 ## Created a Laravel Project 🚀
@@ -177,7 +179,7 @@ The controller implements basic CRUD operations:
 
    * The `index.blade.php` file serves as the main view for displaying the list of badminton rackets. Below are the key components of this file explained step-by-step:
 
-#### 1. Validations ✅
+#### 1. Validations - using Laravel built-in function ✅
 
 * Before displaying the rackets, we check for any session messages that indicate success or error states. This is crucial for user feedback after actions like adding or updating a racket. The following code snippets handle these validations using **Laravel**:
 
@@ -383,9 +385,55 @@ The form includes fields for editing the racket's details:
 @enderror
 ```
 ### 4. Submit Button :handshake:
+
+- The form includes a submit button to update the racket's details.
 ```blade
 <button type="submit">Save Changes</button>
-````
+```
 - A button to submit the form and save the changes made to the racket's details.
 - The `edit.blade.php` file provides a user-friendly interface for editing racket details, ensuring that all necessary information is captured and validated before submission.
 
+### 5. Validation Rules :lock:
+
+- In the `RacketController.php` file, define the validation rules for the form data.
+- If any of the fields fail validation, the form will display the following error messages.
+
+```blade
+public function validateRacket(Request $request)
+{
+    return $request->validate([
+        'company' => 'required|string|max:255',
+        'title' => 'required|string|max:255',
+        'year' => 'required|integer|min:1900|max:' . date('Y'),
+        'level' => 'required|in:beginner,amateur,professional',
+    ], [
+        'company.required' => 'The company name is required.',
+        'company.string' => 'The company must be a valid string.',
+        'company.max' => 'The company cannot exceed 255 characters.',
+        
+        'title.required' => 'The title is required.',
+        'title.string' => 'The title must be a valid string.',
+        'title.max' => 'The title cannot exceed 255 characters.',
+        
+        'year.required' => 'The year is required.',
+        'year.integer' => 'The year must be a valid number.',
+        'year.min' => 'The year must be after 1900.',
+        'year.max' => 'The year cannot be later than the current year.',
+        
+        'level.required' => 'The level is required.',
+    ]);
+```
+
+## 6.Conclusion
+
+- In this guide, I have successfully built a CRUD (Create, Read, Update, Delete) application for managing a badminton racket store using Laravel. This project showcases the essential steps to create a functional web application while highlighting Laravel's powerful features.
+
+- We started by setting up the racket_store database and configuring our Laravel project. This laid the groundwork for managing our racket data effectively. By creating the rackets table and defining its structure through a model and migration, we ensured that our application had a solid foundation. Leveraging Laravel’s Eloquent ORM made it easier to interact with the database, simplifying our CRUD operations.
+
+- The RacketController plays a crucial role in handling all requests related to rackets. I focused on implementing validation rules to ensure that user inputs are clean and meet specific criteria, which is vital for maintaining data integrity and providing a smooth user experience. Features like search functionality and pagination were added to enhance usability, allowing users to find and navigate through rackets effortlessly.
+
+- Each Blade template I created—such as index, show, create, and edit—contributes to a user-friendly interface. These templates are designed to provide clear feedback and make navigation intuitive for users.
+
+- After running the Laravel development server, we confirmed that all functionalities were working correctly, providing a seamless experience. This project not only serves as a practical example of CRUD operations in Laravel but also sets the stage for future enhancements, such as user authentication or payment processing.
+
+- In conclusion, this guide has helped me learn and improve my skills in application development. With the knowledge gained here, I feel equipped to expand and customize my project to meet specific needs. 🎉
