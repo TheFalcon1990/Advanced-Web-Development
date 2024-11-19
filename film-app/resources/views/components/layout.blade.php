@@ -11,7 +11,8 @@
         <li><a href="/films">Home</a></li>
         <li><a href="/films/create">Add new film</a></li>
         <li><a href="/films/about">About</a></li>
-      </ul>
+        <li><a href="/certificates">Certificates</a></li>
+    </ul>
     </nav>
     {{$slot}}
   </body>
