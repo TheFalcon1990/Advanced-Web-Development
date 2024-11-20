@@ -48,25 +48,17 @@ function edit($id)
     return view('films.edit', ['film' => $film]);
 }
 
-public function update(Request $request)
+public function update(Request $request, $id)
 {
     // Validate the request data
     $request->validate([
-        'id' => 'required|exists:films,id',
-        'title' => 'required|string|max:255|unique:films,title,' . $request->input('id'),
-        'year' => 'required|integer|unique:films,year,' . $request->input('id'),
+        'title' => 'required|string|max:255|unique:films,title,' . $id,
+        'year' => 'required|integer',
         'duration' => 'required|integer',
     ]);
 
-    // Get the film ID from the request
-    $filmId = $request->input('id');
-
     // Find the film using Eloquent
-    $film = Film::find($filmId);
-
-    if (!$film) {
-        return redirect('/films')->with('error', 'Film not found!');
-    }
+    $film = Film::findOrFail($id); // Automatically throws a 404 if not found
 
     // Update the film properties
     $film->title = $request->input('title');
@@ -77,20 +69,23 @@ public function update(Request $request)
     $film->save();
 
     // Redirect to the films index page with a success message
-    return redirect('/films');
+    return redirect()->route('films.index')->with('success', 'Film updated successfully');
 }
 
-public function destroy(Request $request)
-    {
-       
-        // Find the film using Eloquent
-        $film = Film::find($request->id);
+public function destroy($id)
+{
+    // Find the film using Eloquent
+    $film = Film::find($id);
 
-        // Delete the film
-        $film->delete();
-
-        // Redirect to the homepage
-        return redirect('/films');
+    // Check if the film exists
+    if (!$film) {
+        return redirect()->route('films.index')->with('error', 'Film not found!');
     }
-}
 
+    // Delete the film
+    $film->delete();
+
+    // Redirect to the films index page with a success message
+    return redirect()->route('films.index')->with('success', 'Film deleted successfully');
+}
+}

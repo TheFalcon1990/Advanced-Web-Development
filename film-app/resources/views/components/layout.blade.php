@@ -6,14 +6,30 @@
     <link href="{{asset('css/style.css')}} ?v={{time()}}" type="text/css" rel="stylesheet" />
   </head>
   <body>
-    <nav>
-      <ul>
-        <li><a href="/films">Home</a></li>
-        <li><a href="/films/create">Add new film</a></li>
-        <li><a href="/films/about">About</a></li>
-        <li><a href="/certificates">Certificates</a></li>
-    </ul>
-    </nav>
+
+@auth
+    <div>
+        Logged in as {{ Auth::user()->name }}
+        <form method='POST' action='/logout'>
+            @csrf
+            <button type='submit'>Logout</button>
+        </form>
+    </div>
+@endauth
+
+<nav>
+  <ul>
+      <li><a href="/films">Home</a></li>
+      @can('edit')
+      <li><a href="/films/create">Add new film</a></li>
+      @endcan
+      <li><a href="/films/about">About</a></li>
+      @guest
+      <li><a href="/login">Sign in</a></li>
+      @endguest
+  </ul>
+</nav>
+
     {{$slot}}
   </body>
 </html>
