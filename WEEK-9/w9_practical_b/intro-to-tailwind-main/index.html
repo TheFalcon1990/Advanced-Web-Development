@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Amazing Film App</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./css/style.css" type="text/css" rel="stylesheet" >
+  </head>
+  <body class="text-sky-950 text-lg">
+    <header class="bg-sky-950 text-white">
+        <!--desktop-header-wrapper-->
+        <div class="sm:flex sm:justify-between">
+          <!--header-wrapper-->
+          <div class="flex justify-between p-3">
+            <!--logo-->
+            <div>Amazing Film App</div>
+            <!-- open icon-->
+            <div
+              onclick="toggleNav()"
+              id="openIcon"
+              class="cursor-pointer hidden sm:hidden"
+            >
+              <svg width="30px" viewBox="0 0 10 10" fill="none">
+                <path d="M1 1h8M1 4h 8M1 7h8" stroke="#fff" stroke-width="1" />
+              </svg>
+            </div>
+            <!-- close icon-->
+            <div
+              onclick="toggleNav()"
+              id="closeIcon"
+              class="cursor-pointer sm:hidden"
+            >
+              X
+            </div>
+          </div>
+          <nav>
+            <ul id="navList" class="sm:block sm:p-3">
+              <li class="sm:inline sm:border-0 border-t border-white">
+                <a
+                  class="sm:inline-block pt-1 pr-3 pb-1 pl-3 hover:bg-white/25"
+                  href="#"
+                  >Home</a
+                >
+              </li>
+              <li class="sm:inline sm:border-0 border-t border-white">
+                <a
+                  class="sm:inline-block pt-1 pr-3 pb-1 pl-3 hover:bg-white/25"
+                  href="#"
+                  >Add New film</a
+                >
+              </li>
+              <li class="sm:inline sm:border-0 border-t border-white">
+                <a
+                  class="sm:inline-block pt-1 pr-3 pb-1 pl-3 hover:bg-white/25"
+                  href="#"
+                  >About</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    <!-- main-content-->
+    <div class="p-1 sm:flex sm:flex-row sm:flex-wrap">
+        <div>
+            <h2>Recommended</h2>
+            <img src="./images/jaws_movie_poster.jpg" alt="Jaws Poster">
+            <p>
+            Jaws is a 1975 American thriller film directed by Steven Spielberg, based on the 1974 novel by Peter Benchley. It stars Roy Scheider as police chief Martin Brody, who, with the help of a marine biologist (Richard Dreyfuss) and a professional shark hunter (Robert Shaw), hunts a man-eating great white shark that attacks beachgoers at a summer resort town. Murray Hamilton plays the mayor, and Lorraine Gary portrays Brody's wife. The screenplay is credited to Benchley, who wrote the first drafts, and actor-writer Carl Gottlieb, who rewrote the script during principal photography.
+            </p>
+        
+        </div>
+            
+    <!-- content-list-holder -->
+    <div>
+        <h2>Popular</h2>
+        <ul>
+        <li><a href='#'>Jaws</a></li>
+        <li><a href='#'>Winter's Bone</a></li>
+        <li><a href='#'>Do The Right Thing</a></li>
+        <li><a href='#'>The Incredibles</a></li>
+        <li><a href='#'>The Godfather</a></li>
+        </ul>
+    </div>
+
+    <!-- content-list-holder -->
+    <div>
+        <h2>Recently Added</h2>
+        <ul>
+        <li><a href='#'>Spirited Away</a></li>
+        <li><a href='#'>Moonlight</a></li>
+        <li><a href='#'>Life of PI</a></li>
+        <li><a href='#'>Gravity</a></li>
+        <li><a href='#'>Arrival</a></li>
+        </ul>
+    </div>
+</div>
+<script src="js/app.js"></script>
+</body>
+</html>
