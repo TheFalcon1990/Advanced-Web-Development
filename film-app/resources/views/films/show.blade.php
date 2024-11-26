@@ -4,9 +4,9 @@
     <p>Duration: {{ $film->duration }}</p>
 
     @can('edit')
-    <a href="/films/{{ $film->id }}/edit">
-        <button>Edit</button>
-    </a>
+    <button>
+    <a href="/films/{{ $film->id }}/edit" style="text">Edit</a>
+    </button>
 
     <form method="POST" action="{{ route('films.destroy', $film->id) }}" style="display: inline;">
         @csrf

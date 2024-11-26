@@ -11,20 +11,26 @@ class FilmController extends Controller
 {
     function index()
     {
-        $films = Film::all();
-        return view('films.index',['films' => $films]);
+        $films = Film::byDecade(2000)->get();
+        return view('films.index', ['films' => $films]);
     }
-    function create()
-{
-    $certificates = Certificate::all();
-    return view('films.create', ['certificates' => $certificates]);
-}
 
     function about()
     {
         $films = Film::all();
         return view('films.about',['films' => $films]);
     }
+
+
+    // function show($id)
+    
+    function listByDecade($decade = 2000)
+    {
+        $films = Film::byDecade($decade)->get();
+        return response()->json($films);
+    }
+
+
     function store(Request $request)
     {
         $film = new Film();
